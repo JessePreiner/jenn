@@ -15,4 +15,4 @@ def contact(request):
     return render(request, 'front/contact.html', context)
 
 def about(request):
-    return HttpResponse("I'm a twin")
+    return render(request, 'front/about.html', {})

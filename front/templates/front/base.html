@@ -1,13 +1,36 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jennifer Ballantyne</title>
 </head>
 <body>
+    <header>
+            <nav class="deep-orange darken-4">
+                <div class="nav-wrapper">
+                    <a href="#" data-target="mobile-links" class="sidenav-trigger">
+                        <i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                    {% include 'front/links.html' %}
+                    </ul>
+                </div>
+            </nav>    
+            <ul class="sidenav" id="mobile-links">
+                {% include 'front/links.html' %}
+            </ul>
+        </div> 
+    </header>
     {% block content %}
     {% endblock %}
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+        var elem = document.querySelector('.sidenav');
+        var instance = M.Sidenav.init(elem, {});
+  </script>
 </body>
 </html>
