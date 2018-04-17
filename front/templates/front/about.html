@@ -2,6 +2,35 @@
 
 
 {% block content %}
-    <h1>About</h1>
-    <div><p>I'm a twin</p></div>
+{% load static %}
+<div class="container">
+    <section class="row z-depth-1 inclusive hoverable valign-wrapper grey darken-4 white-text">
+        <div class="col s12 m12 l8">
+            <div class="writeup">
+                <h2>I love dogs!</h2>
+                <p>I appreciate all dogs, big, small, old, and young. They give me energy and inspire me.</p>
+                <p>Spicy jalapeno bacon ipsum dolor amet pork chop tri-tip t-bone salami bacon rump pig. Chuck pork loin pancetta ham hock t-bone alcatra filet mignon salami ham jowl hamburger. Cupim buffalo shankle salami brisket, sirloin filet mignon ribeye pork pork chop pig. Alcatra leberkas biltong prosciutto. Sausage spare ribs turducken, pastrami frankfurter burgdoggen kielbasa ham hock.</p>
+                <a class="btn light-blue lighten-2" href="{% url 'contact' %}">Book now</a>          
+            </div>
+        </div>
+        <div class="col s12 m12 l4 hide-on-med-and-down">
+            <img src="{% static "front/java-square.jpg" %}" class="right responsive-img circle" alt="Walk in the park"/>
+        </div>
+        </section>
+
+    <section class="row z-depth-1 care hoverable valign-wrapper grey darken-4 white-text">
+        <div class="col s12 m12 l8">
+            <div class="writeup">
+                <h2>Special care for special friends</h2>
+                <p>Spicy jalapeno bacon ipsum dolor amet pork chop tri-tip t-bone salami bacon rump pig. Chuck pork loin pancetta ham hock t-bone alcatra filet mignon salami ham jowl hamburger. Cupim buffalo shankle salami brisket, sirloin filet mignon ribeye pork pork chop pig. Alcatra leberkas biltong prosciutto. Sausage spare ribs turducken, pastrami frankfurter burgdoggen kielbasa ham hock.</p>
+                <a class="btn light-blue lighten-2" href="#">Read testimonials</a>
+                
+            </div>
+        </div>
+        <div class="col s12 m12 l4 hide-on-med-and-down">
+            <img src="{% static "front/bently-park-square.jpg" %}" class="right responsive-img circle" alt="Walk in the park"/>
+        </div>
+    </section>
+</div>
+
 {% endblock %}

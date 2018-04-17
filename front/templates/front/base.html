@@ -1,17 +1,59 @@
+{% load static %}
+
 <html lang="en">
 <head>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"  media="screen,projection"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static "front/favicon.svg" %}">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jennifer Ballantyne</title>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        img {
+            padding:10px;
+        }
+        section {
+            margin-top:50px;
+        }
+        .writeup {
+            padding:20px;
+        }
+
+        h2 {
+            font-size:2.5rem;
+        }
+
+        blockquote {
+            border-left:2px solid burlywood;
+            font-size: 1.3rem;
+        }
+
+        
+        @media screen and (max-width: width 992px) {
+
+        }
+        
+    </style>
 </head>
-<body>
+<body class="light-green lighten-5">
     <header>
-            <nav class="deep-orange darken-4">
+            <nav class=" grey darken-4 white-text">
                 <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">
+                        <img src="{% static "front/paw.svg" %}" width="65" class="right responsive-img " alt="Logo"/>  
+                    </a>
                     <a href="#" data-target="mobile-links" class="sidenav-trigger">
                         <i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
@@ -24,8 +66,30 @@
             </ul>
         </div> 
     </header>
-    {% block content %}
-    {% endblock %}
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="page-footer  grey darken-4 white-text">
+            <div class="container">
+              <div class="row">
+                <div class="col l12 s12">
+                <div class="center">   
+                    <h5 class="white-text">Get in touch!</h5>
+                    <p class="grey-text text-lighten-4">Let's work together. Drop me a line.</p>
+                    <a class="btn light-blue lighten-2" href="{% url 'contact' %}">Contact</a>
+                </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright center">
+              <div class="container">
+              © 2018 Jennifer Ballantyne. All rights reserved.
+              </div>
+            </div>
+          </footer>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script>
